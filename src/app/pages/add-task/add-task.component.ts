@@ -52,6 +52,6 @@ export class AddTaskComponent implements OnInit {
     this.tasksForm.value.description = e.target.value;
   }
   completeNewTask(): void {
-    this.newTask.isCompleted = !this.newTask.isCompleted;
+    this.tasksForm.value.isCompleted = !this.tasksForm.value.isCompleted;
   }
 }
