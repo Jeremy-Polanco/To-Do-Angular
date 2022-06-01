@@ -1,0 +1,28 @@
+<form class="task-form">
+  <h4>To-Do</h4>
+  <div class="form-control">
+    <button type="button" class="btn add-task-btn" routerLink="/add-task">
+      add task
+    </button>
+  </div>
+</form>
+<section class="tasks-container">
+  <div
+    cdkDropList
+    class="tasks"
+    (cdkDropListDropped)="drop($event)"
+    *ngIf="tasks !== []"
+  >
+    <div *ngFor="let task of tasks">
+      <app-task
+        (edit)="editTask(task)"
+        [task]="task"
+        (remove)="deleteTask(task)"
+        (complete)="completeTask(task)"
+      ></app-task>
+    </div>
+  </div>
+  <button class="btn delete-all-btn" (click)="deleteAllTasks()">
+    delete all
+  </button>
+</section>

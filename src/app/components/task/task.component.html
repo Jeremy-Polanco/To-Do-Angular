@@ -1,0 +1,32 @@
+<div
+  cdkDrag
+  class="single-task"
+  [ngClass]="{ 'task-completed': task.isCompleted === true }"
+>
+  <h5 *ngIf="!task.isEditing">
+    <span><i class="far fa-check-circle"></i></span>{{ task.description }}
+  </h5>
+  <input
+    (keydown.enter)="editTask()"
+    class="edit-task-input"
+    *ngIf="task.isEditing"
+    type="text"
+    value="{{ editTaskInput }}"
+    (input)="editTask($event)"
+  />
+  <div class="task-links">
+    <button type="checkbox" class="edit-link" (click)="editTask()">
+      <i class="fas fa-edit"></i>
+    </button>
+
+    <button class="delete-btn" type="button" (click)="deleteTask()">
+      <i class="fas fa-trash"></i>
+    </button>
+    <input
+      class="checkbox-input"
+      type="checkbox"
+      [checked]="task.isCompleted"
+      (click)="completeTask()"
+    />
+  </div>
+</div>
