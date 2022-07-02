@@ -1,0 +1,130 @@
+.completed-task {
+  text-decoration: line-through;
+}
+
+.btn {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  background: var(--primary-500);
+  border: none;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  color: var(--white);
+  background: var(--primary-700);
+  box-shadow: var(--shadow-2);
+}
+
+button.block {
+  width: 100%;
+}
+
+/*************
+     FORM 
+*************/
+form {
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+}
+label {
+  display: block;
+  font-size: var(--smallText);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--grey-50);
+  border-color: transparent;
+  border: 1px solid var(--grey-300);
+}
+
+::placeholder {
+  color: var(--grey-600);
+}
+
+.task-form,
+.single-task-form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 576px) {
+  .form-control {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+}
+form > :first-child {
+  margin-top: 0;
+}
+form > :last-child {
+  margin-bottom: 0;
+}
+
+.single-task-form h4 {
+  text-align: center;
+}
+
+.single-task-form p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.single-task-form .form-control {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  justify-items: start;
+  gap: 0 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.single-task-form label {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.task-edit-completed {
+  width: auto;
+}
+.back-link {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 6rem;
+  background: var(--black);
+}
+.back-link:hover {
+  background: var(--black);
+  opacity: 0.75;
+}
+
+.single-task-form .form-alert {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.edit-task-input {
+  padding-right: 1rem;
+}
+.checkbox-input {
+  width: auto;
+}

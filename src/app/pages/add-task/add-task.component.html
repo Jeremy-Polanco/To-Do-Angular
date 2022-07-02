@@ -1,0 +1,42 @@
+<div class="container">
+  <form
+    class="single-task-form"
+    (submit)="submitForm($event)"
+    [formGroup]="tasksForm"
+  >
+    <h4>add Task</h4>
+    <div class="form-control">
+      <label>Task ID</label>
+      <p class="task-edit-id">{{ tasks.length + 1 }}</p>
+    </div>
+    <div class="form-control">
+      <label>Description</label>
+      <input
+        (keydown.enter)="submitForm($event)"
+        (input)="updateDescription($event)"
+        value="{{ tasksForm.value.description }}"
+        type="text"
+        class="task-edit-name"
+        placeholder="add details..."
+      />
+    </div>
+    <div class="form-control">
+      <label for="completed">completed</label>
+      <input
+        type="checkbox"
+        class="task-edit-completed"
+        (click)="completeNewTask()"
+        [checked]="newTask.isCompleted"
+      />
+    </div>
+    <button
+      type="submit"
+      class="block btn task-edit-btn"
+      (click)="submitForm($event)"
+    >
+      Add
+    </button>
+    <div class="form-alert"></div>
+  </form>
+  <a routerLink="/" class="btn back-link">back to tasks</a>
+</div>
